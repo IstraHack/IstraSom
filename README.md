@@ -15,7 +15,11 @@ Place in your /var/www/html a folder named "uplaods" and a php file with the fol
     $path = $path . basename( $_FILES['filename']['name']);
 
     if(move_uploaded_file($_FILES['filename']['tmp_name'], $path)) {
-    } else{
+    	 echo "The file ".  basename( $_FILES['uploaded_file']['name']). 
+      " has been uploaded";
+    } 
+    else{
+    	echo "There was an error uploading the file, please try again!";
     }
   }
 ?>
